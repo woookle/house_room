@@ -1,0 +1,1738 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+// [+] DEFAULT SETTINGS [+]
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+// [+] BODY [+]
+body {
+  padding-top: 76px;
+  &::-webkit-scrollbar {
+    width: 15px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #000;
+  }
+}
+.screen_burger {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -500;
+}
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 10px;
+}
+.burger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 10px;
+  margin: 0 10px;
+  cursor: pointer;
+  display: none;
+  position: relative;
+  .line_burger {
+    width: 40px;
+    height: 2px;
+    background: #000;
+    transition: all 0.5s ease;
+  }
+}
+
+// [+] HEADER [+]
+header {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  z-index: 99;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    transition: all 0.3s ease;
+    a {
+      text-decoration: none;
+      color: rgba(0, 0, 0, 0.5);
+      font-weight: 700;
+      transition: all 0.3s ease;
+      &.active_nav_link {
+        color: #000;
+      }
+      &:hover {
+        font-size: 18px;
+      }
+    }
+  }
+  .name_account {
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover {
+      transform: scale(1.1);
+    }
+    &.hide {
+      display: none;
+    }
+  }
+  .login_register {
+    background: transparent;
+    border: none;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &.hide {
+      display: none;
+    }
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  .change_theme_btn {
+    width: 25px;
+    height: 25px;
+    border: 2px solid #000;
+    margin: 0 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: #000;
+    }
+  }
+}
+
+// [+] MAIN PAGE [+]
+.main {
+  height: 767px;
+  background: url("../images/OtherImages/header_background.png") no-repeat
+    center/cover;
+  display: flex;
+  align-items: center;
+  animation: anim 1s 1 ease;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+  }
+  .home_title {
+    font-size: 71px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    animation: anim 1s 1 ease;
+  }
+  .home_subtitle {
+    font-size: 14px;
+    animation: anim 1s 1 ease;
+  }
+  .check_spisok_btn {
+    background-color: #fa7f28;
+    border-radius: 5px;
+    padding: 13px 45px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 25px;
+    border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    &:hover {
+      transform: scale(0.95);
+      background-color: transparent;
+      color: #fa7f28;
+    }
+  }
+  .good_home_right {
+    width: 305px;
+    height: 180px;
+    padding: 12px 0 5px 15px;
+    background-color: rgba(0, 0, 0, 0.77);
+  }
+  .home_right_title {
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .home_box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    margin-bottom: 15px;
+    p {
+      font-size: 14px;
+    }
+  }
+  .btn_home_register {
+    padding: 12px;
+    font-size: 11px;
+    color: #000;
+    font-weight: 700;
+    background-color: #fff;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover {
+      transform: scale(0.95);
+      background: transparent;
+      color: #fff;
+    }
+  }
+}
+.doverie_block {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 100px 0 65px 0;
+  transition: all 0.3s ease;
+  animation: anim 1s 1 ease;
+  h1 {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+  }
+  .sub_title {
+    font-size: 18px;
+    margin: 10px 0 70px 0;
+    text-align: center;
+  }
+  .doverie_cards {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 120px;
+    flex-wrap: wrap;
+    gap: 25px;
+    .dov_card {
+      flex-grow: 1;
+      width: 310px;
+      height: 269px;
+      padding: 25px 0;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.3s ease;
+      &:hover {
+        transform: scale(1.05);
+      }
+      .dov_image {
+        width: 89px;
+        height: 89px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        border: 1px solid #000;
+        margin-bottom: 25px;
+      }
+      .dov_title {
+        font-weight: 700;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      .dov_subtitle {
+        text-align: center;
+        font-size: 14px;
+      }
+    }
+  }
+  .find_agent_block {
+    display: flex;
+    justify-content: center;
+  }
+  .btn_find_agent {
+    padding: 12px 48px;
+    font-size: 14px;
+    background: #fff;
+    color: #000;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    &:hover {
+      transform: scale(0.95);
+      background: #000;
+      color: #fff;
+    }
+  }
+}
+
+// [+] FOOTER [+]
+footer {
+  height: 162px;
+  display: flex;
+  align-items: center;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .footer_email {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.54);
+    font-weight: 700;
+  }
+  .socc {
+    display: flex;
+    gap: 20px;
+    img {
+      width: 32px;
+      height: 32px;
+      transition: all 0.3s ease;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+// [+] ADS PAGE [+]
+.ads {
+  background: rgba(232, 232, 232, 0.56);
+  padding: 0 0 50px 0;
+  .ads_header_block {
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: url('../images/OtherImages/ads_background.jpg');
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 40px;
+    animation: anim 1s 1 ease;
+  }
+  .ads_title {
+    text-align: center;
+    font-size: 42px;
+    color: #000;
+    margin-bottom: 10px;
+  }
+  .ads_subtitle {
+    font-size: 14px;
+    text-align: center;
+  }
+  .search_block {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+    animation: anim 1s 1 ease;
+    input {
+      width: 280px;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      border: 1px solid #000;
+      padding: 12px;
+      background: transparent;
+      border-right-color: transparent;
+      font-size: 14px;
+      outline: none;
+      margin-right: -2px;
+    }
+    .search_btn {
+      padding: 12px;
+      background: #000;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border: 1px solid #000;
+      transition: all 0.3s ease;
+      border-top-right-radius: 10px;
+      font-weight: 700;
+      border-left-color: transparent;
+      border-bottom-right-radius: 10px;
+      &:hover {
+        background: transparent;
+        color: #000;
+      }
+    }
+  }
+  .cards_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    animation: anim_cards 1s 1 ease;
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 310px;
+      height: 410px;
+      background: #fff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      &:hover {
+        transform: scale(1.1);
+      }
+      .card_image {
+        margin-bottom: 15px;
+        img {
+          width: 310px;
+          height: 185px;
+        }
+      }
+      .card_category {
+        font-size: 12px;
+        color: #747070;
+        margin-bottom: 15px;
+      }
+      .card_price {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 30px;
+      }
+      .card_city {
+        color: #000;
+      }
+      .card_desc {
+        display: flex;
+        gap: 10px;
+        font-size: 12px;
+        align-items: center;
+        margin-bottom: 30px;
+        .card_circle {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: #777777;
+        }
+      }
+    }
+  }
+}
+
+// [+] OUR AGENTS PAGE [+]
+.our_agents {
+  background: url("../images/OtherImages/sotrudniki_background.jpg") no-repeat
+    top/cover;
+  height: 500px;
+  display: flex;
+  animation: anim 1s 1 ease;
+  align-items: center;
+  color: #fff;
+  .our_agents_title {
+    font-size: 70px;
+    font-weight: 900;
+  }
+  .our_agents_subtitle {
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+.gallery_block {
+  padding: 50px 0;
+  animation: anim 1s 1 ease;
+}
+.photo_gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px 10px;
+  grid-template-areas:
+    "image_1 image_1 image_2 image_3"
+    "image_4 image_4 image_4 image_4";
+  div {
+    height: 32vh;
+  }
+  .image_1 {
+    grid-area: image_1;
+  }
+  .image_2 {
+    grid-area: image_2;
+  }
+  .image_3 {
+    grid-area: image_3;
+  }
+  .image_4 {
+    grid-area: image_4;
+  }
+}
+.agents_swiper {
+  text-align: center;
+  animation: anim 1s 1 ease;
+  padding: 100px 0 60px 0;
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: #000;
+  }
+  .swiper-pagination {
+    display: none;
+  }
+  .employ_card {
+    .employ_avatar {
+      img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+      }
+    }
+    .employ_name {
+      font-weight: 700;
+      font-size: 30px;
+      margin-bottom: 5px;
+    }
+    .employ_category {
+      color: #777777;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+// [+] REVIEWS TITLE [+]
+.reviews_title {
+  animation: anim 1s 1 ease;
+  width: 100%;
+  height: 500px;
+  background: url("../images/OtherImages/reviews_background.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  .rev_title {
+    font-size: 70px;
+    font-weight: 900;
+  }
+  .rev_sub {
+    text-align: center;
+  }
+}
+.reviews_block {
+  padding: 70px 0 100px 0;
+  animation: anim 1s 1 ease;
+  .send_review {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 46px;
+    gap: 20px;
+    input {
+      max-width: 850px;
+      width: 100%;
+      padding: 0 10px;
+      outline: none;
+    }
+    .send_review_btn {
+      width: 214px;
+      height: 60px;
+      color: #fff;
+      background: #000;
+      border: none;
+      cursor: pointer;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      &:hover {
+        background: transparent;
+        color: #000;
+      }
+    }
+  }
+  .reviews_clients {
+    width: 100%;
+    border: 2px solid #000;
+    padding: 20px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    .review {
+      border-bottom: 1px solid #000;
+      padding-bottom: 2px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      word-wrap: break-word;
+    }
+    .comment_block {
+      position: relative;
+      cursor: pointer;
+      transition: all 0.5s ease;
+      img {
+        width: 24px;
+        height: 24px;
+      }
+      .dark_dots_settings {
+        display: none;
+      }
+      &:hover {
+        img {
+          transform: scale(0.95);
+        }
+      }
+      &.active_settings_review {
+        .comment_settings_block {
+          display: flex;
+          animation: anim 0.5s 1 ease;
+        }
+      }
+    }
+    .comment_settings_block {
+      position: absolute;
+      top: 0;
+      display: none;
+      right: 100%;
+      border: 2px solid #000;
+      background-color: #fff;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      row-gap: 10px;
+      border-radius: 5px;
+      padding: 10px;
+      transition: all 0.3s ease;
+      button {
+        padding: 5px 10px;
+        background-color: #fff;
+        border: 1px solid #000;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover {
+          transform: scale(0.95);
+          background-color: #000;
+          color: #fff;
+        }
+      }
+    }
+    .review_name {
+      font-size: 34px;
+    }
+    .review_desc {
+      font-size: 12px;
+      color: #777777;
+    }
+  }
+}
+
+// [+] KORZINA [+]
+.your_korzina {
+  padding-bottom: 76px;
+  animation: anim 1s 1 ease;
+  .korzina_header_block {
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    background: url('../images/OtherImages/ads_background.jpg');
+    background-size: cover;
+    background-position: center;
+    font-size: 30px;
+  }
+  .your_homes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+    .home_korzina {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #000;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      img {
+        transition: all 0.3s ease;
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.02);
+        }
+      }
+      .korzina_image_title {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .korzina_price {
+        font-weight: 700;
+        font-size: 24px;
+      }
+      .remove_home_korzina {
+        padding: 10px 20px;
+        background-color: #fff;
+        border: 2px solid #000;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover {
+          transform: scale(0.99);
+          border-color: brown;
+          background-color: brown;
+          color: #fff;
+        }
+      }
+      img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+.total_money_info {
+  position: fixed;
+  left: 20px;
+  bottom: 80px;
+  border: 2px solid #000;
+  background: #fff;
+  font-weight: 700;
+  padding: 10px;
+}
+.buy_homes_btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 15px 40px;
+  background-color: #fff;
+  border: 2px solid #000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    border-color: #4cff64;
+    background-color: #4cff64;
+    color: #fff;
+  }
+}
+
+// [+] DARK THEME [+]
+.darkTheme {
+  &::-webkit-scrollbar-track {
+    background-color: #000;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #fff;
+  }
+  .burger {
+    .line_burger {
+      background-color: #fff;
+    }
+  }
+  .agents_swiper {
+    .swiper-pagination-bullet-active {
+      background-color: #ffffff;
+    }
+  }
+  header {
+    background: #1b1b1b;
+    .nav {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      a {
+        color: rgba(255, 255, 255, 0.5);
+        &.active_nav_link {
+          color: #ffffff;
+        }
+      }
+    }
+    .name_account {
+      color: #fff;
+    }
+    .login_register {
+      color: rgba(255, 255, 255, 0.5);
+    }
+    .change_theme_btn {
+      border: 2px solid #ffffff;
+      &::before {
+        left: auto;
+        right: 0;
+        background: #ffffff;
+      }
+    }
+  }
+  .doverie_block {
+    background: rgba(0, 0, 0, 0.81);
+    padding: 100px 0 65px 0;
+    animation: anim 1s 1 ease;
+    h1 {
+      color: #fff;
+    }
+    .sub_title {
+      color: #fff;
+    }
+  }
+  footer {
+    background: #1b1b1b;
+    .footer_email {
+      color: rgba(255, 255, 255, 0.54);
+    }
+  }
+  .ads {
+    background: rgba(0, 0, 0, 0.81);
+    .ads_header_block {
+      background: url('../images/OtherImages/ads_background_dark.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .ads_title {
+      color: #fff;
+    }
+    .ads_subtitle {
+      color: #fff;
+    }
+    .search_block {
+      input {
+        background: #fff;
+      }
+    }
+    .cards_container {
+      .card {
+        background: #1e1e1e;
+        .card_category {
+          color: #e2e2e2;
+        }
+        .card_price {
+          color: #fff;
+        }
+        .card_desc {
+          color: #fff;
+          .card_circle {
+            background: #dbdbdb;
+          }
+        }
+        .card_city {
+          color: #fff;
+        }
+      }
+    }
+  }
+  .gallery_block {
+    background: rgba(0, 0, 0, 0.81);
+  }
+  .our_agents_container {
+    background: rgba(0, 0, 0, 0.81);
+  }
+  .agents_swiper {
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: #fff;
+    }
+    .employ_card {
+      .employ_name {
+        font-weight: 700;
+        font-size: 30px;
+        margin-bottom: 5px;
+        color: #fff;
+      }
+      .employ_category {
+        color: #c8c8c8;
+        margin-bottom: 10px;
+      }
+      .employ_desc {
+        color: #fff;
+      }
+    }
+  }
+  .reviews_block {
+    background: rgba(0, 0, 0, 0.81);
+    .send_review_btn {
+      background-color: #fff;
+      color: #000;
+      &:hover {
+        color: #fff;
+      }
+    }
+    .reviews_clients {
+      border-color: #fff;
+      color: #fff;
+      .review {
+        border-color: #fff;
+        .comment_block {
+          img {
+            display: none;
+          }
+          .dark_dots_settings {
+            display: block;
+          }
+          .comment_settings_block {
+            background-color: #000;
+            border-color: #fff;
+            button {
+              background: transparent;
+              border-color: #fff;
+              color: #fff;
+              &:hover {
+                background-color: #fff;
+                color: #000;
+              }
+            }
+          }
+        }
+      }
+      .review_name {
+        color: #fff;
+      }
+      .review_desc {
+        color: #c8c8c8;
+      }
+    }
+  }
+  .cards_container {
+    p {
+      color: #fff;
+    }
+  }
+  .account_settings {
+    background: #1b1b1b;
+    button {
+      color: #fff;
+      border-color: #fff;
+      &:hover {
+        background-color: #fff;
+        color: #000;
+      }
+    }
+  }
+  .information {
+    div {
+      color: #fff;
+      border: 2px solid #fff;
+      border-bottom-color: transparent;
+      background-color: #0000009c;
+    }
+  }
+  .change_account_name_block,
+  .change_account_email_block,
+  .change_account_password_block,
+  .change_review_block,
+  .card_description,
+  .top_up_money_block {
+    background-color: #000;
+    color: #fff;
+    border-color: #fff;
+    input {
+      border-bottom-color: #fff;
+      color: #fff;
+    }
+    .change_account_name_btns {
+      button {
+        border: 2px solid #fff;
+        color: #fff;
+        &:hover {
+          background-color: #fff;
+          color: #000;
+        }
+      }
+    }
+  }
+  .you_in_register_block {
+    .you_in_register {
+      background-color: #000;
+    }
+  }
+  .review_popup_block {
+    .review_popup {
+      background-color: #000;
+    }
+  }
+  .your_korzina {
+    background-color: rgba(0, 0, 0, 0.81);
+    .korzina_header_block {
+      background: url('../images/OtherImages/ads_background_dark.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    h1 {
+      color: #fff;
+    }
+    .your_homes {
+      p {
+        color: #fff;
+      }
+      .home_korzina {
+        background-color: #1b1b1b;
+        color: #fff;
+      }
+      .remove_home_korzina {
+        border-color: #fff;
+        background-color: #1b1b1b;
+        color: #fff;
+      }
+    }
+  }
+  .total_money_info {
+    background-color: #1b1b1b;
+    color: #fff;
+    border-color: #fff;
+  }
+  .buy_homes_btn {
+    background-color: #1b1b1b;
+    border-color: #fff;
+    color: #fff;
+    &:hover {
+      transform: scale(0.99);
+      border-color: #4cff64;
+      background-color: #4cff64;
+      color: #fff;
+    }
+  }
+}
+
+// [+] BURGER && DARKTHEME [+]
+body.darkTheme.active_burger {
+  .screen_burger {
+    background-color: rgba(0, 0, 0, 0.818);
+  }
+  .account_settings {
+    background-color: transparent;
+  }
+}
+
+// [+] BURGER [+]
+.active_burger {
+  .nav {
+    top: 150px;
+  }
+  .account_block {
+    top: 400px;
+  }
+  .change_theme_block {
+    top: 500px;
+    &.change_theme_burger_active {
+      top: 645px;
+    }
+  }
+  .screen_burger {
+    z-index: 50;
+    background-color: #ffffffe7;
+  }
+  .burger {
+    height: 50%;
+    .line_burger {
+      &:nth-child(1) {
+        position: absolute;
+        transform: rotate(45deg);
+      }
+      &:nth-child(2) {
+        transform: scale(0);
+      }
+      &:nth-child(3) {
+        position: absolute;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+// [+] LOGIN REGISTER BLOCK [+]
+.login_register_block {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url("../images/OtherImages/register_background.gif");
+  background-size: cover;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: anim 0.5s 1 ease;
+  &.hide {
+    animation: out 1s 1 ease forwards;
+  }
+  .main_login_register_block {
+    width: 300px;
+    height: 340px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    &.active_register {
+      width: 260px;
+      height: 460px;
+      .login_form {
+        position: absolute;
+        right: 110%;
+      }
+      .register_form {
+        left: 10px;
+      }
+    }
+    .close_btn {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      background: #fff;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 1001;
+      border: 1px solid #fff;
+      img {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+  .login_form {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    transition: all 0.3s ease;
+    .login_title {
+      margin: 20px 0;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      outline: none;
+      border: none;
+      background: transparent;
+      border-bottom: 2px solid #fff;
+      color: #fff;
+      &#email_login {
+        margin-bottom: 20px;
+      }
+      &::placeholder {
+        color: #fff;
+      }
+    }
+    .error_login_text {
+      font-size: 13px;
+      font-weight: bold;
+      margin: 10px 0 20px 0;
+      color: red;
+    }
+    .login_btn {
+      width: 200px;
+      padding: 10px 0;
+      font-size: 16px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      &:hover {
+        transform: scale(0.95);
+        background: transparent;
+        color: #fff;
+      }
+    }
+    .no_login {
+      font-size: 14px;
+      margin-top: 20px;
+      .go_register_link {
+        color: #ffffff;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-weight: 700;
+        border-bottom: 1px solid transparent;
+        padding-bottom: 5px;
+        &:hover {
+          border-bottom-color: #4cff64;
+          padding-bottom: 0;
+          color: #4cff64;
+        }
+      }
+    }
+  }
+  .register_form {
+    position: absolute;
+    top: 25px;
+    left: 110%;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    .register_title {
+      margin-bottom: 20px;
+    }
+    .inputs_register {
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      outline: none;
+      border: none;
+      background: transparent;
+      border-bottom: 2px solid #fff;
+      color: #fff;
+      &::placeholder {
+        color: #fff;
+      }
+    }
+    .error_register_text {
+      font-size: 13px;
+      font-weight: bold;
+      margin: 10px 0 20px 0;
+      color: red;
+    }
+    .register_btn {
+      width: 170px;
+      padding: 10px 0;
+      font-size: 16px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      &:hover {
+        transform: scale(0.95);
+        background: transparent;
+        color: #fff;
+      }
+    }
+    .yes_register {
+      font-size: 14px;
+      margin-top: 20px;
+      .go_login_link {
+        color: #ffffff;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border-bottom: 1px solid transparent;
+        font-weight: 700;
+        padding-bottom: 5px;
+        &:hover {
+          border-bottom-color: #4cff64;
+          padding-bottom: 0;
+          color: #4cff64;
+        }
+      }
+    }
+  }
+}
+
+// [+] INFORMATION BLOCK [+]
+.information {
+  div {
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    background-color: #fa7f28;
+    color: #fff;
+    border-bottom-color: transparent;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 20px;
+    animation: anim 0.5s 1 ease;
+    z-index: 2000;
+    &.hide_info {
+      animation: out 0.5s 1 ease forwards;
+    }
+  }
+}
+
+// [+] ВЫПАДАЮЩЕЕ МЕНЮ [+]
+.account_and_settings {
+  display: none;
+  &:hover {
+    .account_settings {
+      display: flex;
+    }
+  }
+}
+.account_and_settings.active {
+  display: block;
+}
+.account_block {
+  position: relative;
+}
+.account_settings {
+  display: none;
+  background: #fff;
+  border-radius: 20px;
+  padding: 15px;
+  flex-direction: column;
+  position: absolute;
+  row-gap: 10px;
+  overflow: hidden;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+  transition: all 0.3s ease;
+  button {
+    width: 170px;
+    padding: 5px 0;
+    cursor: pointer;
+    border: 1px solid #000;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    &:hover {
+      transform: scale(0.95);
+      background-color: #000;
+      color: #fff;
+    }
+  }
+}
+
+// [+] POPUPS [+]
+.you_in_register_block,
+.review_popup_block,
+.change_account_name_form,
+.change_account_email_form,
+.change_account_password_form,
+.change_review_form,
+.show_card_content,
+.top_up_money_form {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: anim 0.4s 1 ease forwards;
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  &.hide_pop {
+    animation: out 0.4s 1 ease forwards;
+  }
+}
+.you_in_register_block {
+  .you_in_register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    justify-content: center;
+    color: #fff;
+    background-color: #fa7f28;
+    img {
+      width: 100px;
+      height: 100px;
+    }
+    .register_popup_btn {
+      padding: 10px 30px;
+      border: none;
+      background: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      &:hover {
+        transform: scale(0.95);
+      }
+    }
+  }
+}
+.review_popup_block {
+  .review_popup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #fa7f28;
+    color: #fff;
+    img {
+      width: 100px;
+      height: 100px;
+    }
+    .review_popup_btns {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+    }
+    .pop_review_btn {
+      &:hover {
+        background-color: #4cff64;
+        color: #fff;
+      }
+    }
+    .pop_review_okay {
+      &:hover {
+        background-color: brown;
+        color: #fff;
+      }
+    }
+    .pop_review_btn,
+    .pop_review_okay {
+      padding: 10px 30px;
+      border: none;
+      background: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      &:hover {
+        transform: scale(0.95);
+      }
+    }
+  }
+}
+.card_description {
+  padding: 10px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #000000;
+  background-color: #fff;
+  .header_card_description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  img {
+    width: 300px;
+    border-radius: 20px;
+  }
+  .buy_home_btn {
+    width: 100%;
+    padding: 10px 0;
+    margin-top: 20px;
+    background: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover {
+      transform: scale(0.99);
+      background-color: #4cff64;
+      border-color: #4cff64;
+      color: #fff;
+    }
+  }
+  .close_home_btn {
+    width: 60%;
+    padding: 10px 0;
+    margin-top: 10px;
+    background: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover {
+      transform: scale(0.99);
+      background-color: brown;
+      border-color: brown;
+      color: #fff;
+    }
+  }
+}
+.change_account_name_block,
+.change_account_email_block,
+.change_account_password_block,
+.change_review_block,
+.top_up_money_block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+  background-color: #fff;
+  border: 2px solid #000;
+  padding: 20px;
+  border-radius: 20px;
+  input {
+    width: 300px;
+    padding: 10px 5px;
+    outline: none;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #000;
+  }
+  .change_account_name_btns {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    button {
+      flex-grow: 1;
+      padding: 5px 10px;
+      background: transparent;
+      border: 1px solid #000;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      &:hover {
+        transform: scale(0.95);
+        background-color: #000;
+        color: #fff;
+      }
+    }
+  }
+}
+.change_password_error_text,
+.change_name_error_text,
+.top_up_money_error {
+  color: brown;
+  font-weight: 700;
+}
+
+// [+] MEDIA [+]
+@media (max-width: 768px) {
+  .photo_gallery {
+    grid-template-areas:
+      "image_1 image_1 image_1 image_1"
+      "image_2 image_2 image_3 image_3"
+      "image_4 image_4 image_4 image_4";
+  }
+  .agents_swiper {
+    .swiper-pagination {
+      display: block;
+    }
+    .swiper-pagination-bullet-active {
+      background-color: #000;
+    }
+  }
+  .main {
+    .good_home_left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+    .home_title {
+      font-size: 65px;
+      text-align: center;
+    }
+    .home_subtitle {
+      text-align: center;
+    }
+    .good_home_right {
+      display: none;
+    }
+  }
+  .doverie_block {
+    h1 {
+      font-size: 24px;
+    }
+    .sub_title {
+      font-size: 14px;
+    }
+  }
+  .our_agents {
+    .our_agents_title {
+      text-align: center;
+    }
+    .our_agents_subtitle {
+      text-align: center;
+      font-size: 14px;
+    }
+  }
+  .nav {
+    position: fixed;
+    flex-direction: column;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+    text-align: center;
+  }
+  .account_block {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+  }
+  .change_theme_block {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+  }
+  .burger {
+    display: flex;
+    z-index: 1000;
+  }
+  .agents_swiper {
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: none;
+    }
+  }
+  .account_settings {
+    background: transparent;
+    button {
+      border: none;
+      border-bottom: 1px solid #000;
+      &:hover {
+        transform: scale(0.95);
+        color: #fff;
+      }
+    }
+  }
+  .settings_burger_active {
+    display: flex;
+  }
+  .review_popup_block {
+    .review_popup {
+      h1 {
+        font-size: 27px;
+      }
+    }
+  }
+}
+@media (max-width: 481px) {
+  .main {
+    .home_title {
+      font-size: 40px;
+    }
+  }
+  .doverie_block {
+    h1 {
+      font-size: 20px;
+    }
+    .sub_title {
+      font-size: 11px;
+    }
+  }
+  .ads {
+    .ads_subtitle {
+      font-size: 11px;
+    }
+  }
+  .our_agents {
+    .our_agents_title {
+      font-size: 50px;
+    }
+    .our_agents_subtitle {
+      font-size: 11px;
+    }
+  }
+  .reviews_title {
+    .rev_sub {
+      font-size: 11px;
+    }
+  }
+}
+@media (max-width: 430px) {
+  .your_korzina {
+    .your_homes {
+      .home_korzina {
+        flex-direction: column;
+      }
+    }
+  }
+}
+@media (max-width: 376px) {
+  .main {
+    .home_title {
+      font-size: 35px;
+    }
+  }
+  .our_agents {
+    .our_agents_title {
+      font-size: 45px;
+    }
+  }
+  footer {
+    .container {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      row-gap: 20px;
+    }
+  }
+}
+@media (max-width: 321px) {
+  .our_agents {
+    .our_agents_title {
+      font-size: 40px;
+    }
+  }
+  .reviews_block {
+    .send_review {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      input {
+        padding: 15px 10px;
+      }
+    }
+  }
+  .review_popup_block {
+    .review_popup {
+      h1 {
+        font-size: 20px;
+      }
+    }
+  }
+  .information {
+    div {
+      right: 0;
+    }
+  }
+  .card_description {
+    padding: 10px;
+    border-radius: 20px;
+    border: 2px solid #000000;
+    .header_card_description {
+      img {
+        transition: all 0.3s ease;
+        width: 250px;
+      }
+    }
+  }
+}
+
+// [+] KEYFRAMES [+]
+@keyframes anim {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+@keyframes anim_cards {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
