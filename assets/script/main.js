@@ -164,7 +164,7 @@ let AuthMe = {
 // База аккаунтов
 let accounts = [
   {
-    id: 4,
+    id: 1,
     name: "admin",
     email: "admin",
     password: "admin",
@@ -511,7 +511,7 @@ const AddReview = () => {
                   <p class="review_desc">${el.description}</p>
                 </div>
                 ${
-                  el.user_id == AuthMe.id || AuthMe.id == 4
+                  el.user_id == AuthMe.id || AuthMe.id == 1
                     ? `<div class="comment_block" >
                                                 <img src="assets/images/OtherImages/dark_dots.svg" alt="settings">
                                                 <img src="assets/images/OtherImages/white_dots.svg" alt="settings" class="dark_dots_settings">
