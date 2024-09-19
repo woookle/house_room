@@ -264,7 +264,7 @@ const checkMoney = (set) => {
         top_up_money_error.innerHTML =
           "Сумма пополнения 500 000 ₽ - 15 000 000 ₽";
       } else if (auth_password.value != AuthMe.password) {
-        top_up_money_error.innerHTML = "Пароли не совпадают";
+        top_up_money_error.innerHTML = "Неправильный пароль";
       } else {
         addMoney(money.value);
         checkMoney();
