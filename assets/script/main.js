@@ -1308,6 +1308,7 @@ const onReviewPage = () => {
   input_review.addEventListener("keypress", (k) => {
     if (k.key == "Enter") {
       if (!AuthMe.isAuth) {
+        input_review.value = '';
         youNotRegister();
       } else if (input_review.value.trim() != "") {
         onAddReview(input_review.value);
@@ -1318,6 +1319,7 @@ const onReviewPage = () => {
 
   send_btn_review.addEventListener("click", () => {
     if (!AuthMe.isAuth) {
+      input_review.value = '';
       youNotRegister();
     } else if (input_review.value.trim() != "") {
       onAddReview(input_review.value);
